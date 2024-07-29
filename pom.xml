@@ -144,6 +144,24 @@
   <build>
     <plugins>
       <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                <configLocation>checkstyle.xml</configLocation>
+                    <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnViolation>false</failsOnCheckstyleFailure>false</failsOnCheckstyleViolation>false</configuration>
+            </plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
